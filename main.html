@@ -1,16 +1,155 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase Form</title>
+    <style>
+        :root {
+            --wrapper-padding: 12px;
+            --wrapper-radius: 12px;
+            --wrapper-bg: #e0e0e0;
+            --stepper-circle-width: 30px;
+            --stepper-circle-margin-bottom: 8px;
+            --stepper-circle-font-size: 24px;
+            --stepper-circle-border: 4px solid black;
+            --selected-circle-bg: #279600;
+            --selected-circle-color: white;
+            --divider-line-height: 4px;
+            --product-padding: 12px;
+            --product-margin: 12px;
+            --product-height: 40px;
+            --product-radius: 8px;
+            --product-bold: bold;
+            --button-padding: 12px;
+            --button-font-size: 16px;
+            --button-radius: 8px;
+            --button-bg: #02203c;
+            --button-color: white;
+        }
+
+        #wrapper {
+            padding: var(--wrapper-padding);
+            border-radius: var(--wrapper-radius);
+            background-color: var(--wrapper-bg);
+        }
+
+        ol {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        ol li {
+            text-align: center;
+            position: relative;
+        }
+
+        .stepper-circle {
+            width: var(--stepper-circle-width);
+            height: var(--stepper-circle-width);
+            margin: 0 auto var(--stepper-circle-margin-bottom);
+            font-size: var(--stepper-circle-font-size);
+            border: var(--stepper-circle-border);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .stepper-circle.selected {
+            background-color: var(--selected-circle-bg);
+            color: var(--selected-circle-color);
+        }
+
+        .stepper-line {
+            height: var(--divider-line-height);
+            background-color: black;
+            width: 100%;
+            position: absolute;
+            top: calc(50% - var(--divider-line-height) / 2);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            padding: var(--product-padding);
+            margin: var(--product-margin) 0;
+            height: var(--product-height);
+            border-radius: var(--product-radius);
+            font-weight: var(--product-bold);
+            background-color: white;
+            display: flex;
+            align-items: center;
+            border-left-width: 5px;
+            border-left-style: solid;
+        }
+
+        .blue-product {
+            color: #626ee3;
+            border-left-color: #626ee3;
+        }
+
+        .red-product {
+            color: #890023;
+            border-left-color: #890023;
+        }
+
+        .orange-product {
+            color: #f37f1b;
+            border-left-color: #f37f1b;
+        }
+
+        .green-product {
+            color: #11967e;
+            border-left-color: #11967e;
+        }
+
+        button {
+            float: right;
+            padding: var(--button-padding);
+            font-size: var(--button-font-size);
+            border-radius: var(--button-radius);
+            background-color: var(--button-bg);
+            color: var(--button-color);
+            border: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
-
+    <div id="wrapper">
+        <ol>
+            <li>
+                <div class="stepper-circle">1</div>
+                Step 1
+                <div class="stepper-line"></div>
+            </li>
+            <li>
+                <div class="stepper-circle selected">2</div>
+                Step 2
+                <div class="stepper-line"></div>
+            </li>
+            <li>
+                <div class="stepper-circle">3</div>
+                Step 3
+            </li>
+        </ol>
+        <ul>
+            <li class="blue-product">Blue Product</li>
+            <li class="red-product">Red Product</li>
+            <li class="orange-product">Orange Product</li>
+            <li class="green-product">Green Product</li>
+        </ul>
+        <button>Continue</button>
+    </div>
 </body>
-
 </html>
+
